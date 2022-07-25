@@ -17,7 +17,7 @@ class SpecificationRepository implements ISpecificationRepository {
       SpecificationRepository.INSTANCE = new SpecificationRepository();
     }
 
-    return SpecificationRepository.INSTANCE;
+    return this.INSTANCE;
   }
 
   list(): Specification[] {
