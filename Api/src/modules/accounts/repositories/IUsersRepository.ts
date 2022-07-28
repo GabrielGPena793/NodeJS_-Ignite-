@@ -8,6 +8,8 @@ interface IUsersRepository {
 
   create(data: ICreateUserDTO): Promise<void>;
 
+  findById(id: string): Promise<Users>
+
 }
 
 export { IUsersRepository };
