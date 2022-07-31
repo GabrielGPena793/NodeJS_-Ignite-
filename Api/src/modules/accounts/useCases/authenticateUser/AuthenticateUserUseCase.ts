@@ -25,7 +25,7 @@ class AuthenticateUserUseCase {
   constructor(
     @inject("UsersRepository")
     private userRepository: IUsersRepository
-    ){}
+  ){}
 
   async execute({ email, password }: IRequest): Promise<IResponse> {
     // Usuário existe?
