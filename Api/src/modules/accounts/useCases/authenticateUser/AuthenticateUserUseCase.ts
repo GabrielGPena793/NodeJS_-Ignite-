@@ -3,7 +3,7 @@ import { inject, injectable } from "tsyringe";
 import { sign } from "jsonwebtoken";
 
 import { IUsersRepository } from "../../repositories/IUsersRepository";
-import { AppError } from "../../../../errors/AppError";
+import { AppError } from "../../../../shared/errors/AppError";
 
 
 interface IRequest {
@@ -27,7 +27,7 @@ class AuthenticateUserUseCase {
     private userRepository: IUsersRepository
     ){}
 
-  async execute({ email, password}: IRequest): Promise<IResponse> {
+  async execute({ email, password }: IRequest): Promise<IResponse> {
     // Usuário existe?
     const user = await this.userRepository.findByEmail(email)
 
