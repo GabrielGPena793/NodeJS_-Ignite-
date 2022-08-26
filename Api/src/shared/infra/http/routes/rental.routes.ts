@@ -1,13 +1,19 @@
-import { Router } from 'express';
-import { CreateCarController } from '../../../../modules/cars/useCases/createCar/CreateCarController';
-import { CreateRentalController } from '../../../../modules/rentals/useCases/createRental/CreateRentalController';
-import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
-
+import { Router } from "express";
+import { CreateCarController } from "../../../../modules/cars/useCases/createCar/CreateCarController";
+import { CreateRentalController } from "../../../../modules/rentals/useCases/createRental/CreateRentalController";
+import { DevolutionRentalController } from "../../../../modules/rentals/useCases/devolutionRental/DevolutionRentalController";
+import { ensureAuthenticated } from "../middlewares/ensureAuthenticated";
 
 const rentalRoutes = Router();
 
 const createRentalController = new CreateRentalController();
+const devolutionRentalController = new DevolutionRentalController();
 
-rentalRoutes.post("/", ensureAuthenticated, createRentalController.handle)
+rentalRoutes.post("/", ensureAuthenticated, createRentalController.handle);
+rentalRoutes.post(
+  "/devolution/:id",
+  ensureAuthenticated,
+  devolutionRentalController.handle
+);
 
-export { rentalRoutes }
+export { rentalRoutes };
