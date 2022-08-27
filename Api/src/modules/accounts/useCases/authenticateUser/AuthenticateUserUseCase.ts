@@ -28,7 +28,7 @@ class AuthenticateUserUseCase {
     @inject("UsersRepository")
     private userRepository: IUsersRepository,
     @inject("UsersTokensRepository")
-    private usersTokensRepository: IUsersTokensRepository,
+    private UsersTokensRepository: IUsersTokensRepository,
     @inject("DayJsDateProvider")
     private dateProvider: IDateProvider
   ) {}
@@ -70,7 +70,7 @@ class AuthenticateUserUseCase {
       expires_refresh_token_days
     );
 
-    await this.usersTokensRepository.create({
+    await this.UsersTokensRepository.create({
       user_id: user.id,
       refresh_token,
       expires_date: refresh_token_expires_date,
