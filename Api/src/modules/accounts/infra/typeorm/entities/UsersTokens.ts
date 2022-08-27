@@ -4,7 +4,7 @@ import { Users } from "./Users";
 
 
 @Entity()
-class UserTokens {
+class UsersTokens {
 
   @PrimaryColumn()
   id: string;
@@ -33,4 +33,4 @@ class UserTokens {
 
 }
 
-export { UserTokens }
+export { UsersTokens }

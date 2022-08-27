@@ -1,9 +1,9 @@
 import { ICreateUserTokenDTO } from "../dtos/ICreateUserTokenDTO"
-import { UserTokens } from "../infra/typeorm/entities/UserTokens"
+import { UsersTokens } from "../infra/typeorm/entities/UsersTokens"
 
 interface IUsersTokensRepository {
 
-  create({user_id, expires_date, refresh_token}: ICreateUserTokenDTO): Promise<UserTokens>
+  create({user_id, expires_date, refresh_token}: ICreateUserTokenDTO): Promise<UsersTokens>
 
 }
 
